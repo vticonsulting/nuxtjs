@@ -1,12 +1,15 @@
 {
-    "name": "nuxtjs",
-    "scripts": {
-        "dev": "nuxt",
-        "build": "nuxt generate",
-        "start": "nuxt start",
-        "generate": "nuxt generate"
-    },
-    "dependencies": {
-      "nuxt": "^2.15.7"
-    }
+  "name": "nuxtjs",
+  "description": "nuxtjs demo",
+  "private": "true",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt generate",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "json-server": "^0.16.3",
+    "nuxt": "^2.15.7"
+  }
 }
