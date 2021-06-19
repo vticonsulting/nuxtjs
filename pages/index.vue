@@ -1,5 +1,30 @@
+<script>
+import {defineComponent} from '@vue/composition-api'
+
+export default defineComponent({
+  data() {
+    return {
+      projects: [],
+    }
+  },
+  async fetch() {
+    const {data} = await this.$axios.get('projects')
+
+    this.projects = data.map(project => {
+      return {
+        ...project,
+        status: 'pending',
+      }
+    })
+  },
+})
+</script>
 <template>
   <div class="p-4">
+    <div class="projects">
+      {{ projects }}
+    </div>
+
     <TCard />
     <NuxtLink to="about">
       <TButton>About</TButton>
@@ -7,11 +32,17 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
-.badge {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
-  &:hover {
-    @apply bg-gray-300;
+<style lang="postcss">
+.test {
+  color: rgb(40, 176, 218);
+  @apply p-4;
+
+  &_working {
+    @apply text-green-500;
+  }
+
+  &_gray {
+    color: gray(50);
   }
 }
 </style>

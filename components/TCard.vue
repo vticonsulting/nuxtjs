@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4 dark:bg-gray-900">
     <img
       class="w-full"
       src="https://tailwindcss.com/img/card-top.jpg"
@@ -7,7 +7,7 @@
     />
     <div class="px-6 py-4 pb-2">
       <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-      <p class="text-gray-700 text-base">
+      <p class="text-gray-700 dark:text-gray-300 text-base">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
         quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
         nihil.
@@ -20,3 +20,15 @@
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+.badge {
+  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
+  &:hover {
+    @apply bg-gray-300;
+  }
+}
+.dark-mode .badge {
+  @apply bg-gray-700 text-gray-200;
+}
+</style>
