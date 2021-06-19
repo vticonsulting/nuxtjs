@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {launchConfetti} from '~/helpers/confetti'
+import { launchConfetti } from '~/helpers/confetti'
 
 export default {
   setup() {

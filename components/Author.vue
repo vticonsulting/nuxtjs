@@ -17,7 +17,7 @@ export default defineComponent({
   setup(props) {
     const user = ref({})
 
-    const {$http} = useContext()
+    const { $http } = useContext()
 
     useFetch(async () => {
       user.value = await $http.$get(
@@ -25,7 +25,7 @@ export default defineComponent({
       )
     })
 
-    return {user}
+    return { user }
   },
   fetchOnServer: false,
 })

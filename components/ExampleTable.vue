@@ -96,10 +96,10 @@ export default {
         },
       ],
       columnsVisible: {
-        name: {title: 'Name', display: true},
-        sold: {title: 'Stock Sold', display: true},
-        available: {title: 'Stock Available', display: true},
-        cleared: {title: 'Stock Cleared', display: true},
+        name: { title: 'Name', display: true },
+        sold: { title: 'Stock Sold', display: true },
+        available: { title: 'Stock Available', display: true },
+        cleared: { title: 'Stock Cleared', display: true },
       },
       showDetailIcon: true,
       showDefaultDetail: true,
@@ -118,9 +118,7 @@ export default {
       <OCheckbox v-model="showDetailIcon">Show detail chevron</OCheckbox>
       <OCheckbox v-model="showDefaultDetail">Custom detail column</OCheckbox>
       <div v-for="(column, index) in columnsVisible" :key="index">
-        <OCheckbox v-model="column.display">
-          {{ column.title }}
-        </OCheckbox>
+        <OCheckbox v-model="column.display">{{ column.title }}</OCheckbox>
       </div>
     </OField>
 
@@ -143,13 +141,9 @@ export default {
         sortable
         v-slot="props"
       >
-        <template v-if="showDetailIcon">
-          {{ props.row.name }}
-        </template>
+        <template v-if="showDetailIcon">{{ props.row.name }}</template>
         <template v-else>
-          <a @click="toggle(props.row)">
-            {{ props.row.name }}
-          </a>
+          <a @click="toggle(props.row)">{{ props.row.name }}</a>
         </template>
       </OTableColumn>
 
@@ -160,9 +154,7 @@ export default {
         sortable
         position="centered"
         v-slot="props"
-      >
-        {{ props.row.sold }}
-      </OTableColumn>
+      >{{ props.row.sold }}</OTableColumn>
 
       <OTableColumn
         field="available"
@@ -171,9 +163,7 @@ export default {
         sortable
         position="centered"
         v-slot="props"
-      >
-        {{ props.row.available }}
-      </OTableColumn>
+      >{{ props.row.available }}</OTableColumn>
 
       <OTableColumn
         :visible="columnsVisible['cleared'].display"
@@ -181,23 +171,17 @@ export default {
         position="centered"
         v-slot="props"
       >
-        <span>
-          {{ Math.round((props.row.sold / props.row.available) * 100) }}%
-        </span>
+        <span>{{ Math.round((props.row.sold / props.row.available) * 100) }}%</span>
       </OTableColumn>
 
       <template slot="detail" slot-scope="props">
         <tr v-for="item in props.row.items" :key="item.name">
           <td v-if="showDetailIcon"></td>
-          <td v-show="columnsVisible['name'].display">
-            &nbsp;&nbsp;&nbsp;&nbsp;{{ item.name }}
-          </td>
+          <td v-show="columnsVisible['name'].display">&nbsp;&nbsp;&nbsp;&nbsp;{{ item.name }}</td>
           <td v-show="columnsVisible['sold'].display">{{ item.sold }}</td>
-          <td v-show="columnsVisible['available'].display">
-            {{ item.available }}
-          </td>
+          <td v-show="columnsVisible['available'].display">{{ item.available }}</td>
           <td v-show="columnsVisible['cleared'].display">
-            <span> {{ Math.round((item.sold / item.available) * 100) }}% </span>
+            <span>{{ Math.round((item.sold / item.available) * 100) }}%</span>
           </td>
         </tr>
       </template>

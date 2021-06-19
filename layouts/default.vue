@@ -1,38 +1,32 @@
+<template>
+  <div class="flex flex-col min-h-screen">
+    <AppNavbar />
+    <main class="flex-1">
+      <SectionWrapper>
+        <Nuxt :key="$route.params.id" />
+      </SectionWrapper>
+    </main>
+    <PortalTarget name="overlays" />
+  </div>
+</template>
 
 <script>
 export default {
   head: {
     title: 'Nuxt.js with TailwindCSS',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
         content: 'Nuxt.js with TailwindCSS example',
       },
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
   },
 }
 </script>
-
-<template>
-  <div>
-    <p class="p-4 pb-2">
-      <select
-        v-model="$colorMode.preference"
-        class="border w-48 dark:bg-gray-900 dark:border-gray-700"
-      >
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </p>
-    <nuxt :key="$route.params.id" class="mx-auto p-4" />
-    <PortalTarget name="overlays" />
-  </div>
-</template>
 
 <style>
 :root {

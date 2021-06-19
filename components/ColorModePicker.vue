@@ -1,4 +1,3 @@
-
 <script>
 import IconSystem from '~/assets/icons/system.svg?inline'
 import IconLight from '~/assets/icons/light.svg?inline'
@@ -45,10 +44,12 @@ export default {
     </ul>
     <p>
       <ColorScheme placeholder="..." tag="span">
-        Color mode: <b>{{ $colorMode.preference }}</b>
-        <span v-if="$colorMode.preference === 'system'"
-          >(<i>{{ $colorMode.value }}</i> mode detected)</span
-        >
+        Color mode:
+        <b>{{ $colorMode.preference }}</b>
+        <span v-if="$colorMode.preference === 'system'">
+          (
+          <i>{{ $colorMode.value }}</i> mode detected)
+        </span>
       </ColorScheme>
     </p>
   </div>

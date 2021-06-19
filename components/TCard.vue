@@ -11,6 +11,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
         quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
         nihil.
+        <CelebrationButton />
       </p>
     </div>
     <div class="px-6 py-4">

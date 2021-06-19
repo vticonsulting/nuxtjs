@@ -1,11 +1,11 @@
 <script>
-import {defineComponent} from '@nuxtjs/composition-api'
+import { defineComponent } from '@nuxtjs/composition-api'
 import useProjects from '~/composables/useProjects'
 
 export default defineComponent({
   setup(props, context) {
-    const {projects, formatDate, filteredProjects} = useProjects()
-    return {projects, formatDate, filteredProjects}
+    const { projects, formatDate, filteredProjects } = useProjects()
+    return { projects, formatDate, filteredProjects }
   },
 })
 </script>
