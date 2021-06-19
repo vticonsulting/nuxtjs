@@ -18,10 +18,16 @@ const config: NuxtConfig = {
     '@nuxtjs/svg',
     '@nuxtjs/tailwindcss',
   ],
+  env: {
+    apiURL: process.env.API_URL || 'https://api.victortolbert.com',
+  },
   modules: ['@nuxt/http', 'nuxt-i18n', '@nuxtjs/axios', '@oruga-ui/oruga/nuxt'],
   plugins: ['~/plugins/vue-placeholders.js'],
   axios: {
-    baseURL: 'http://0.0.0.0:3000/api',
+    baseURL:
+      process.env.API_URL ||
+      process.env.apiURL ||
+      'https://api.victortolbert.com',
   },
   colorMode: {
     classSuffix: '',
