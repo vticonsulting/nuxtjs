@@ -1,5 +1,18 @@
 @import 'tailwindcss/base';
+@import './base/vars';
+@import './base/motion';
+
 @import 'tailwindcss/components';
+@import './components/alert';
+@import './components/box';
+@import './components/button';
+@import './components/cookie-consent';
+@import './components/input';
+@import './components/multiselect';
+@import './components/progress-bar';
+@import './components/select';
+@import './components/table';
+
 @import 'tailwindcss/utilities';
 
 .dark body {

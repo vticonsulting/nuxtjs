@@ -4,16 +4,15 @@ import {defineComponent} from '@vue/composition-api'
 export default defineComponent({
   data() {
     return {
-      projects: [],
+      messages: [],
     }
   },
   async fetch() {
-    const {data} = await this.$axios.get('projects')
-
-    this.projects = data.map(project => {
+    const {data} = await this.$axios.get('messages')
+    this.messages = data.map(message => {
       return {
-        ...project,
-        status: 'pending',
+        ...message,
+        isRead: false,
       }
     })
   },
@@ -21,10 +20,7 @@ export default defineComponent({
 </script>
 <template>
   <div class="p-4">
-    <div class="projects">
-      {{ projects }}
-    </div>
-
+    <CelebrationButton />
     <TCard />
     <NuxtLink to="about">
       <TButton>About</TButton>
