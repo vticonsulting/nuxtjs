@@ -14,4 +14,7 @@
     }
   }
 }
+.dark-mode .btn {
+  @apply bg-blue-700;
+}
 </style>
